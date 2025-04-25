@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SANDIP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      user-select: none
+    }
+
+    img {
+      pointer-events: none
+    }
+
+    .payment-method {
+      transition: all 0.3s ease
+    }
+
+    .payment-method:hover {
+      transform: translateY(-3px)
+    }
+  </style>
+  <!-- <script>document.addEventListener('contextmenu', event => event.preventDefault());</script> -->
+</head>
+
+<body
+  class="bg-gradient-to-br from-indigo-500 to-slate-800 min-h-screen flex items-center justify-center px-4 relative">
+  <div id="toast"
+    class="hidden fixed top-6 left-1/2 transform -translate-x-1/2 bg-green-600 text-white shadow-lg px-5 py-3 rounded-xl text-sm font-medium z-50 transition duration-300">
+  </div>
+  <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 space-y-6 text-center">
+    <h4 class="text-3xl font-bold text-slate-800">MENIYA <span class="text-indigo-600">SANDIP</span></h4>
+    <p class="text-slate-400"><i class="fa fa-lock"></i> More Payment Method</p>
+    <div class="space-y-4 mt-6">
+
+      <!-- Google Pay -->
+      <div class="payment-method bg-slate-50 p-3 rounded-lg border border-slate-200">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-slate-700"> <a href="/googlepay.html"><i class="fa-solid fa-credit-card text-2xl text-blue-500"></i> Google Pay [UPI]</a></span>
+          </div>
+          <button class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded hover:bg-blue-200">
+            <a href="/googlepay.html"><i class="fas fa-external-link-alt"></i> Open</a>
+          </button>
+        </div>
+        <div class="mt-2 text-left text-xs text-slate-500 break-all" id="paypal-address"></div>
+      </div>
+
+      <!-- Paytm -->
+      <div class="payment-method bg-slate-50 p-3 rounded-lg border border-slate-200">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-slate-700"><a href="/paytm.html"><i class="fa-solid fa-qrcode text-2xl text-yellow-500"></i> Paytm [UPI]</a></span>
+          </div>
+          <button class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded hover:bg-yellow-200">
+            <a href="/paytm.html"><i class="fas fa-external-link-alt"></i> Open</a>
+          </button>
+        </div>
+        <div class="mt-2 text-left text-xs text-slate-500 break-all" id="binance-address"></div>
+      </div>
+
+      <!-- Super Money -->
+      <div class="payment-method bg-slate-50 p-3 rounded-lg border border-slate-200">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-slate-700"><a href="/supermoney.html"><i class="fa-solid fa-money-bill-trend-up text-2xl text-purple-500"></i> SMoney [UPI]</a></span>
+          </div>
+          <button onclick="copyPaymentAddress('coffee')"
+            class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded hover:bg-purple-200">
+            <a href="/supermoney.html"><i class="fas fa-external-link-alt"></i> Open</a>
+          </button>
+        </div>
+        <div class="mt-2 text-left text-xs text-slate-500 break-all" id="coffee-address"></div>
+      </div>
+
+      <!-- Bank -->
+      <div class="payment-method bg-slate-50 p-3 rounded-lg border border-slate-200">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-slate-700"><a href="/bank.html"><i class="fa-solid fa-building-columns text-2xl text-green-500"></i> Bank QR [BANK]</a></span>
+          </div>
+          <button onclick="copyPaymentAddress('binance')"
+            class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded hover:bg-green-200">
+            <a href="/bank.html"><i class="fas fa-external-link-alt"></i> Open</a> 
+          </button>
+        </div>
+        <div class="mt-2 text-left text-xs text-slate-500 break-all" id="binance-address"></div>
+      </div>
+
+
+    </div>
+    <div class="grid grid-cols-1 gap-3 mt-6">
+      <a href="https://telegram.me/SANDIPMBOT" id="contact-link"
+        class="block bg-blue-500 text-white font-semibold py-2 rounded-xl shadow-lg hover:bg-blue-600 transition">
+        <i class="fas fa-comment-dots"></i>
+
+        Messgae Me
+      </a>
+    </div>
+
+    <a href="/index.html" class="block text-xs text-red-600 font-bold mt-4 mb-8 no-underline hover:underline">
+      <i class="fas fa-arrow-left"></i> Back To First Page
+    </a>
+
+  </div>
+  <script src="/script.js"></script>
+</body>
+
+</html>
